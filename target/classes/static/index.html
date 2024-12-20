@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #main{
+
+            width: 60%;
+            margin: 0 auto;
+            height: 600px;
+            background-color: aliceblue;
+        }
+        #main ul{
+            margin-top:80px ;
+            margin-left: -20px;
+            width: 100%;
+        }
+        #main ul  li{
+            height: 40px;
+            list-style-type: none;
+            float: left;
+            font-size: 18px;
+            width: 19%;
+            line-height: 40px;
+            text-align: center;
+            border-bottom: 1px solid gray;
+        }
+        #main #cont ul{
+            width: 100%;
+
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+
+    <a href="add.html">添加</a>
+    <ul id="cont">
+        <ul>
+            <li>编号</li>
+            <li>用户名</li>
+            <li>密码</li>
+            <li>余额</li>
+            <li>操作</li>
+        </ul>
+        <ul th:each="users : ${usersList}">
+            <li th:text="${users.id}"></li>
+            <li th:text="${users.userName}"></li>
+            <li th:text="${users.password}"></li>
+            <li th:text="${users.money}"></li>
+            <li>
+                <a th:href="@{'http://localhost:8080/delete?id='+${users.id}}">删除</a>
+                <a th:href="@{'http://localhost:8080/queryId?id='+${users.id}}">修改</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a th:href="@{'http://localhost:8080/query?pageNum='+${pageNumLine}}" th:if="${pageNum>1}">上一页</a>
+                <a th:href="@{'http://localhost:8080/query?pageNum='+${pageNum}}">下一页</a>
+            </li>
+        </ul>
+    </ul>
+    </ul>
+
+</div>
+
+
+</body>
+</html>

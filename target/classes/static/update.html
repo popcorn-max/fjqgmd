@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/update" method="post">
+        <label>用户编号</label>
+        <input type="text" name="id" th:value="${users.id}"><br>
+        <label>用户名</label>
+        <input type="text" name="userName" th:value="${users.userName}"><br>
+        <label>密码</label>
+        <input type="text" name="password" th:value="${users.password}"><br>
+        <label>余额</label>
+        <input type="text" name="money" th:value="${users.money}"><br>
+        <input type="submit" value="修改"><br>
+    </form>
+</body>
+</html>

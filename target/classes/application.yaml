@@ -1,0 +1,27 @@
+mybatis:
+  configuration:  # setting配置
+    auto-mapping-behavior: full
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  type-aliases-package: com.itgmd.pojo # 配置别名
+  mapper-locations: classpath:/mapper/*.xml # mapperxml位置
+
+spring:
+  datasource:
+    username: root
+    password: Af147258
+    url: jdbc:mysql:///webdb3
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  thymeleaf:
+    # 模板模式：HTML5
+    mode: HTML
+    # 编码
+    encoding: UTF-8
+    # 内容类型值
+    content-type: text/html
+    # 是否启用缓存
+    cache: false
+    # 前缀
+    prefix: classpath:/static/
+    # 后缀
+    suffix: .html
